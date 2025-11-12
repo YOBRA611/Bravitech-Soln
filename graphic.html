@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+    <!--favicon-->
+    <link rel="icon" href="logo/BraviTech Logo.png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/graphic.css">
+    <title>Graphic Design</title>
+</head>
+<body>
+    <!--scrollbutton-->
+    <div id="progress">
+        <span id="progress-value">&#x1F815</span>
+    </div>
+     <!--top-footer-->
+    <section class="top-footer">
+        <div class="box">
+            <div class="icon"><i class="fa fa-envelope" aria-hidden="true"></i></div>
+                <div class="text">
+                    <p>bravitech7@gmail.com</p>
+                </div>
+            <div class="icon"><i class="fa fa-street-view" aria-hidden="true"></i></i></i></div>
+                    <div class="text">
+                        <p>Kakamega 50100</p>
+                    </div> 
+            <div class="social-link-list">
+                <a href="" class="social-link"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.linkedin.com/in/brian-odhiambo-a152b5298" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                <a href="" class="social-link"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="" class="social-link"><i class="fa-brands fa-youtube"></i></a>
+            </div>           
+        </div>
+    </section>
+    <!--navmenus-->
+    <header>
+
+        <img src="logo/logo-removebg-preview.png" class="logo" >
+
+        <div class="menuToggle"></div>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="service.html">Service</a></li>
+                <li><a href="work.html">Our work</a></li>
+                <li><a href="quote.html">Quote</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="hero-section">
+        <div class="content">
+            <h2>Graphic Design</h2>
+            <p>Creative . stunning . Designs</p>
+        </div>
+    </section>
+    <!--footer section-->
+     <footer>
+        <div class="footer-col">
+            <h2>About us</h2>
+            <p>At BraviTech, we offer a unique combination of web development, programming training, 
+            and graphic design services—making us your all-in-one digital solutions partner. 
+            Whether you're a business looking to build a powerful online presence, an individual eager to learn in-demand tech skills, or a brand seeking standout visual identity, 
+            we deliver tailored solutions with creativity, precision, and industry know-how.</p>
+        </div>
+        <div class="footer-col">
+            <h2>Quick Links</h2>
+            <ul class="list">
+                <li><a href="Index.html">Home</a></li>
+                <li><a href="About.html">About Us</a></li>
+                <li><a href="Service.html">Service</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h2>Follow Us</h2>
+            <div class="social-icons">
+                <li><a href="https://www.facebook.com/profile.php?id=61565663566282"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="https://www.linkedin.com/in/brian-odhiambo-a152b5298"><i class="fab fa-linkedin-in"></i></a></li>
+                <li><a href="" class="social-link"><i class="fa-brands fa-tiktok"></i></a></li>
+                <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+            </div>
+        </div>
+        <div class="footer-col">
+            <h2>Contact Us</h2>
+            <p>Email: bravitech7@gmail.com</p>
+            <p>Phone: +254700073919</p>
+            <p>Address: Kakamega. 50100</p>
+        </div>
+        <div class="bottom-bar">
+            <p>&copy;2025 BraviTech Solutions . All rights reserved</p>
+        </div>
+        </footer>
+        <!--crafted-->
+        <section class="bottom-footer">
+            <div class="craft">
+                <p>Crafted @  <a href="http://127.0.0.1:5502/index.html"> bravitech</a></p>
+            </div>
+        </section>
+    <script>
+        let menuToggle = document.querySelector('.menuToggle');
+        let header = document.querySelector('header');
+        menuToggle.onclick = function(){
+            header.classList.toggle('active');
+        }
+
+         let calcScrollValue = () => {
+            let scrollProgress = document.getElementById("progress");
+            let progressValue = document.getElementById("progress-value");
+            let pos = document.documentElement.scrollTop;
+            let calcHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            let scrollValue = Math.round((pos * 100)/calcHeight);
+            if (pos > 100) {
+                scrollProgress.style.display = "grid";
+            } else {
+                scrollProgress.style.display = "none";
+            }
+            scrollProgress.addEventListener("click", () => {
+                document.documentElement.scrollTop = 0;
+            });
+            scrollProgress.style.background = `conic-gradient(blue ${scrollValue}%, white ${scrollValue}%)`;
+        };
+
+        window.onscroll = calcScrollValue;
+        window.onload = calcScrollValue;
+    </script>
+</body>
+</html>
